@@ -266,16 +266,29 @@ select {
     min-width: 50px;
 }
 
-.e-flexjb {
-	justify-content: space-between;
+.e-flex_col {
+    flex-direction: column;
 }
 
-.e-flexjc {
-	justify-content: center;
+.e-flex_row {
+    flex-direction: row;
 }
 
-.e-flexac {
-	align-items: center;
+.e-flex_center {
+    justify-content: center;
+    align-items: center;
+}
+
+.e-flex_jb {
+    justify-content: space-between;
+}
+
+.e-flex_jc {
+    justify-content: center;
+}
+
+.e-flex_ac {
+    align-items: center;
 }
 
 .e-center {
