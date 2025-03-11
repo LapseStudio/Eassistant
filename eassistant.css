@@ -416,8 +416,14 @@ select {
     transition: 0.3s;
 }
 
-.e-float input:focus, .e-float ~ textarea:focus {
+.e-float input:focus, .e-float ~ textarea:focus, .e-float select:focus {
     border: 1px solid var(--color1);
+}
+
+.e-float select {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
 .e-field {
