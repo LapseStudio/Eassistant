@@ -1,6 +1,8 @@
-/* EASSISTANT 04.10.2024
-Developer site: https://lapse.site/
-Screen resolution: 460, 860, 1200, 1600, 1920 */
+/* EASSISTANT 09.09.2025
+Developer: lapse.kz
+Screen resolution: 460, 860, 1200, 1600, 1920 
+*/
+
 * {
     background: 0 0;
     margin: 0;
@@ -37,29 +39,29 @@ html {
 }
 
 .section {
-    margin-bottom: 40px;
+    margin-bottom: 80px;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, .e-h1, .e-h2, .e-h3, .e-h4 {
     margin-bottom: 30px;
 }
 
-h1 {
-    font-size: 35px;
+h1, .e-h1 {
+    font-size: 42px;
     font-weight: bold;
 }
 
-h2 {
-    font-size: 25px;
+h2, .e-h2 {
+    font-size: 28px;
     font-weight: bold;
 }
 
-h3 {
+h3, .e-h3 {
     font-size: 20px;
     line-height: 1.4;
 }
 
-h4 {
+h4, .e-h4 {
     font-size: 18px;
     line-height: 1.4;
 }
@@ -93,7 +95,7 @@ input:not([type="radio"], [type="checkbox"]) {
     background: var(--bg2);
     color: inherit;
     padding: 15px 20px;
-    border-radius: 10px;
+    border-radius: var(--radius);
     width: 100%;
 }
 
@@ -266,28 +268,28 @@ select {
     min-width: 50px;
 }
 
-.e-flex_col {
+.e-flex_col, .e-flexcol {
     flex-direction: column;
 }
 
-.e-flex_row {
+.e-flex_row, .e-flexrow {
     flex-direction: row;
 }
 
-.e-flex_center {
+.e-flex_center, .e-flexcenter {
     justify-content: center;
     align-items: center;
 }
 
-.e-flex_jb {
+.e-flex_jb, .e-flexjb {
     justify-content: space-between;
 }
 
-.e-flex_jc {
+.e-flex_jc, .e-flexjc {
     justify-content: center;
 }
 
-.e-flex_ac {
+.e-flex_ac, .e-flexac {
     align-items: center;
 }
 
@@ -410,20 +412,14 @@ select {
 }
 
 .e-float input, .e-float textarea, .e-float input:focus, .e-float textarea:focus {
-    border: 1px solid transparent;
+    border: 1px solid rgb(61 67 79 / 19%);
     padding: 25px 20px 15px 20px;
     height: 55px;
     transition: 0.3s;
 }
 
-.e-float input:focus, .e-float ~ textarea:focus, .e-float select:focus {
+.e-float input:focus, .e-float ~ textarea:focus {
     border: 1px solid var(--color1);
-}
-
-.e-float select {
-    border: 1px solid transparent;
-    border-radius: 10px;
-    transition: 0.3s;
 }
 
 .e-field {
@@ -460,61 +456,6 @@ select {
     z-index: 8;
 }
 
-/* ALERT */
-.alert {
-    position: fixed;
-    width: 300px;
-    right: 20px;
-    top: 80px;
-    font-size: 14px;
-    text-align: center;
-    z-index: 9999;
-}
-
-@media (max-width: 860px) {
-    .alert {
-        right: 15px;
-        top: 15px;
-        font-size: 12px;
-        width: 200px;
-    }
-}
-
-.alert-block {
-    position: relative;
-    display: block;
-    background: #4CAF50;
-    border-radius: 10px;
-    color: #fff;
-    box-shadow: 3px 5px 8px rgba(0, 55, 76, 0.31);
-    padding: 15px 40px 15px 15px;
-    margin-bottom: 15px;
-    overflow: hidden;
-}
-
-.alert-block.danger {
-    background: #f49336;
-}
-
-.alert-block.error {
-    background: #F44336;
-}
-
-.alert-block_bar {
-    position: absolute;
-    background: var(--light2);
-    left: 0;
-    bottom: 0;
-    height: 2px;
-}
-
-.alert-block_close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    cursor: pointer;
-}
-
 /* MODAL OKNO */
 .e-modal {
     display: none;
@@ -530,6 +471,12 @@ select {
     border-radius: var(--radius);
     text-align: center;
     z-index: 9;
+}
+
+@media (max-width: 860px) {
+    .e-modal {
+        min-width: max-content;
+    }
 }
 
 .e-modal > .fa-xmark {
