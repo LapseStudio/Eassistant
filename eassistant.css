@@ -1,8 +1,7 @@
-/* EASSISTANT 09.09.2025
+/* EASSISTANT 01.02.2026
 Developer: lapse.kz
 Screen resolution: 460, 860, 1200, 1600, 1920 
 */
-
 * {
     background: 0 0;
     margin: 0;
@@ -38,7 +37,7 @@ html {
     margin-bottom: 30px;
 }
 
-.section {
+.section, .e-br {
     margin-bottom: 80px;
 }
 
@@ -293,6 +292,12 @@ select {
     align-items: center;
 }
 
+.e-nocontainer, .e-noc  {
+	width: 100vw;
+	margin: 0 calc((100% - 100vw) / 2);
+    padding: 0 calc((100vw - 100%) / 2);
+}
+
 .e-center {
     position: absolute;
     top: 50%;
@@ -418,6 +423,10 @@ select {
     transition: 0.3s;
 }
 
+.e-float textarea, .e-float textarea:focus {
+    height: auto;
+}
+
 .e-float input:focus, .e-float ~ textarea:focus {
     border: 1px solid var(--color1);
 }
@@ -443,6 +452,11 @@ select {
 
 .e-field input:focus, .e-field ~ textarea:focus {
     border: 1px solid var(--color1);
+}
+
+.e-float input::placeholder, .e-float textarea::placeholder, .e-field input::placeholder, .e-field textarea::placeholder {
+    color: var(--text2);
+    opacity: 0.7;
 }
 
 .e-overlay {
@@ -497,4 +511,44 @@ select {
 
 .e-modal > .fa-xmark:hover {
     background: var(--light2);
+}
+
+/* TOAST */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+}
+
+.toast {
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: #fff;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.4s ease;
+    min-width: 200px;
+    max-width: 300px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toast.success {
+    background: #4CAF50;
+}
+
+.toast.error {
+    background: #F44336;
+}
+
+.toast.warning {
+    background: #FF9800;
 }
